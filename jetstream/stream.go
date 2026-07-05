@@ -29,7 +29,7 @@ type stream struct {
 
 // https://github.com/nats-io/nats.go/blob/main/jetstream/README.md
 func New(url string) (*stream, error) {
-	s := stream{}
+	s := stream{ctx: context.Background()}
 
 	//url := os.Getenv("NATS_URL")
 	if url == "" {
